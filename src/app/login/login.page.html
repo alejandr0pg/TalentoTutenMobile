@@ -1,0 +1,21 @@
+<ion-header mode="ios">
+  <ion-toolbar color="primary">
+    <ion-title>Inicia sesión en Tuten.cl</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item lines="none">
+      <ion-label>Correo electronico</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Contraseña</ion-label>
+      <ion-input formControlName="password" [type]="hide ? 'password' : 'text'"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-center">
+      <ion-button shape="round" color="primary" fill="outline" type="submit" expand="block">Iniciar sesión</ion-button>
+    </ion-item>
+  </form>
+</ion-content>
