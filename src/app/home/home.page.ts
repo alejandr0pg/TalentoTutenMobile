@@ -16,9 +16,7 @@ export class HomePage implements OnInit {
   user: User;
   items: any;
   itemsFiltered = [];
-  searchControl: FormControl;
   searchTerm: string = '';
-  searching: any = false;
   filterBy = 'bookingId';
   filterType;
   
@@ -26,8 +24,6 @@ export class HomePage implements OnInit {
     private auth: AuthService,
     private http: HttpClient
   ) {
-    this.searchControl = new FormControl();
-
     this.user = this.auth.currentUserValue;
     this.token = this.user.sessionTokenBck;
   }
@@ -42,8 +38,6 @@ export class HomePage implements OnInit {
     } else if(type === "desc") {
       this.itemsFiltered.sort((a, b) => b[key] - a[key]);
     }
-
-    console.log('sort items', this.itemsFiltered);
   }
 
   getItems() {
@@ -95,6 +89,4 @@ export class HomePage implements OnInit {
   logout() {
     this.auth.logout();
   }
-
-
 }
