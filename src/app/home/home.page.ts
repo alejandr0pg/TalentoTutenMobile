@@ -39,7 +39,7 @@ export class HomePage implements OnInit {
   sort(type, key) {
     if(type === "asc") {
       this.itemsFiltered.sort((a, b) => a[key] - b[key]);
-    } else if(type=== " desc") {
+    } else if(type === "desc") {
       this.itemsFiltered.sort((a, b) => b[key] - a[key]);
     }
 
